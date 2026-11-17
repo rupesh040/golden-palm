@@ -3,7 +3,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Phone, Mail, MapPin, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import siteData from "@/data/data.json";
 import { FooterData } from "@/types";
 
@@ -262,17 +262,22 @@ export default function Footer({
 
             <div className="w-[48px] h-[4px] bg-[#e8b333] mt-3 mb-6" />
 
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li>
                 <a
                   href={
                     contact.phoneHref ||
                     `tel:${contact.phone.replace(/[^0-9+]/g, "")}`
                   }
-                  className="flex items-center gap-3 group text-[14px] sm:text-base text-white/90 hover:text-[#e8b333] transition-colors"
+                  className="inline-flex items-center gap-3.5 group text-[15px] sm:text-base text-white/90 hover:text-[#e8b333] transition-colors"
                 >
-                  <span className="w-[32px] h-[32px] rounded-full bg-[#eab32f] text-[#003b29] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Phone className="w-[17px] h-[17px] fill-current" />
+                  <span className="w-8 h-8 rounded-full bg-[#eab32f] text-[#003b29] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                    <svg
+                      className="w-4 h-4 fill-current"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.4 11.4 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.58 1 1 0 01-.24 1.02l-2.21 2.19z" />
+                    </svg>
                   </span>
 
                   <span className="font-medium whitespace-nowrap">
@@ -284,10 +289,29 @@ export default function Footer({
               <li>
                 <a
                   href={contact.emailHref || `mailto:${contact.email}`}
-                  className="flex items-center gap-3 group text-[14px] sm:text-base text-white/90 hover:text-[#e8b333] transition-colors"
+                  className="inline-flex items-center gap-3.5 group text-[15px] sm:text-base text-white/90 hover:text-[#e8b333] transition-colors"
                 >
-                  <span className="w-[32px] h-[32px] rounded-full bg-[#eab32f] text-[#003b29] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Mail className="w-[17px] h-[17px]" />
+                  <span className="w-8 h-8 rounded-full bg-[#eab32f] text-[#003b29] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                    <svg
+                      className="w-4 h-4 fill-none"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect
+                        width="20"
+                        height="15"
+                        x="2"
+                        y="4.5"
+                        rx="2"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="m2 6.5 10 7 10-7"
+                        stroke="#eab32f"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </span>
 
                   <span className="font-medium break-all">
@@ -297,9 +321,18 @@ export default function Footer({
               </li>
 
               <li>
-                <div className="flex items-start gap-3 text-[14px] sm:text-base text-white/90 leading-[1.4]">
-                  <span className="w-[32px] h-[32px] rounded-full bg-[#eab32f] text-[#003b29] flex items-center justify-center shrink-0">
-                    <MapPin className="w-[18px] h-[18px] fill-current" />
+                <div className="flex items-start gap-3.5 text-[15px] sm:text-base text-white/90 leading-snug">
+                  <span className="w-8 h-8 rounded-full bg-[#eab32f] text-[#003b29] flex items-center justify-center shrink-0 mt-0.5">
+                    <svg
+                      className="w-4 h-4 fill-current"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+                      />
+                    </svg>
                   </span>
 
                   <span>{contact.address}</span>
