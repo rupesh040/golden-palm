@@ -325,7 +325,6 @@ export default function Amenities({
                     className="inline-flex items-center justify-center gap-4 bg-gradient-to-r from-[#d4a044] to-[#b77c20] hover:from-[#bd852c] hover:to-[#a56e18] text-white font-bold text-base px-8 py-4 rounded-[12px] shadow-[0_5px_16px_rgba(183,124,28,0.25)] transition-all duration-300 hover:-translate-y-1"
                   >
                     <span>{activeItem.cta?.text || "Read More"}</span>
-                    {/* <ArrowRight className="w-5 h-5" /> */}
                   </a>
                 </div>
               </div>

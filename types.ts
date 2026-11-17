@@ -155,8 +155,9 @@ export interface FooterColumn {
 export interface FooterData {
   brand: {
     logo: string;
-    brandName: string;
-    brandTagline: string;
+    logoAlt?: string;
+    brandName?: string;
+    brandTagline?: string;
     description: string;
   };
   quickLinks: FooterColumn;

@@ -45,7 +45,8 @@ export default function Footer({
   }, []);
 
   const brand = data?.brand || {
-    logo: "/palm-logo.webp",
+    logo: "/logo.png",
+    logoAlt: "Golden Palm Hotel & Resort",
     brandName: "Golden Palm",
     brandTagline: "HOTEL & RESORT",
     description:
@@ -180,78 +181,38 @@ export default function Footer({
       ref={sectionRef}
       className={`relative w-full bg-[#003b29] text-white pt-14 sm:pt-16 lg:pt-[70px] pb-10 px-5 sm:px-8 lg:px-10 overflow-hidden ${className}`}
     >
-      <div
-        className={`absolute -top-20 -left-16 w-[280px] sm:w-[350px] h-[280px] sm:h-[350px] pointer-events-none transition-all duration-1000 ${
-          isVisible ? "opacity-35 scale-100" : "opacity-0 scale-90"
-        }`}
-      >
-        <Image
-          src="/palm-leaf.webp"
-          alt=""
-          fill
-          sizes="350px"
-          className="object-contain"
-        />
-      </div>
-
-      <div
-        className={`absolute -bottom-24 -left-20 w-[300px] sm:w-[390px] h-[300px] sm:h-[390px] pointer-events-none rotate-45 transition-all duration-1000 ${
-          isVisible ? "opacity-35 scale-100" : "opacity-0 scale-90"
-        }`}
-      >
-        <Image
-          src="/palm-leaf.webp"
-          alt=""
-          fill
-          sizes="390px"
-          className="object-contain"
-        />
-      </div>
-
-      <div
-        className={`absolute -bottom-20 -right-20 w-[320px] sm:w-[430px] h-[320px] sm:h-[430px] pointer-events-none -rotate-12 transition-all duration-1000 ${
-          isVisible ? "opacity-40 scale-100" : "opacity-0 scale-90"
-        }`}
-      >
-        <Image
-          src="/palm-leaf.webp"
-          alt=""
-          fill
-          sizes="430px"
-          className="object-contain"
-        />
-      </div>
-
       <div className="relative z-10 max-w-[1280px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2.35fr_1.25fr_1.05fr_1.95fr_1.35fr] gap-9 lg:gap-0">
           <div
             style={sectionAnimation(0)}
             className={`lg:pr-7 xl:pr-9 transition-all duration-700 ${animationClass}`}
           >
-            <div className="flex items-center gap-3 mb-5">
-              <div className="relative w-[76px] h-[82px] sm:w-[82px] sm:h-[88px] shrink-0">
-                <Image
-                  src={brand.logo}
-                  alt={brand.brandName}
-                  fill
-                  sizes="90px"
-                  className="object-contain"
-                />
-              </div>
-
-              <div className="min-w-0">
-                <h2 className="font-serif text-[27px] sm:text-[31px] xl:text-[35px] font-bold text-white leading-none tracking-tight whitespace-nowrap">
-                  {brand.brandName}
-                </h2>
-
-                <div className="flex items-center gap-2 mt-2">
-                  <span className="h-px flex-1 bg-[#d9aa39]" />
-                  <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.19em] text-white whitespace-nowrap">
-                    {brand.brandTagline}
-                  </span>
-                  <span className="h-px flex-1 bg-[#d9aa39]" />
+            <div className="mb-5">
+              <a
+                href="#home"
+                onClick={(e) => handleLinkClick(e, "#home")}
+                className="inline-block group transition-transform duration-300 hover:scale-[1.02]"
+                aria-label={
+                  brand.logoAlt ||
+                  brand.brandName ||
+                  "Golden Palm Hotel & Resort"
+                }
+              >
+                <div className="relative w-[210px] sm:w-[245px] h-[68px] sm:h-[80px]">
+                  <Image
+                    src={brand.logo || "/logo.png"}
+                    alt={
+                      brand.logoAlt ||
+                      brand.brandName ||
+                      "Golden Palm Hotel & Resort"
+                    }
+                    fill
+                    sizes="(max-width: 640px) 210px, 245px"
+                    className="object-contain object-left"
+                    priority
+                  />
                 </div>
-              </div>
+              </a>
             </div>
 
             <p className="text-[15px] sm:text-base text-white/90 leading-[1.55] max-w-[340px]">
