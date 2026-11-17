@@ -670,10 +670,10 @@
             },
             "contact": {
               "title": "Contact",
-              "phone": "+1 (305) 555-0187",
-              "phoneHref": "tel:+13055550187",
-              "email": "reservation@goldenpalm.com",
-              "emailHref": "mailto:reservation@goldenpalm.com",
+              "phone": "+1 000-000-000",
+              "phoneHref": "tel:+1000000000",
+              "email": "info@xyz.com",
+              "emailHref": "mailto:info@xyz.com",
               "address": "123 Palm Avenue, Miami, FL 33101, United States"
             },
             "followUs": {
