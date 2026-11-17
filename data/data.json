@@ -1,0 +1,753 @@
+{
+  "Tour": {
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "Topbar": "TourTopbar1",
+          "Header": "TourHeader1",
+          "Footer": "TourFooter1"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              { "key": "Banner", "component": "TourBanner1" },
+              { "key": "TopDestinations", "component": "TourTopDestinations1" },
+              { "key": "About", "component": "TourAbout1" },
+              { "key": "Services", "component": "TourServices1" },
+              { "key": "WhyChooseUs", "component": "TourWhyChooseUs1" },
+              { "key": "PopularTours", "component": "TourPopularTours1" },
+              { "key": "Testimonial", "component": "TourTestimonial1" },
+              { "key": "CompanyStatistics", "component": "TourStats1" },
+              { "key": "Blog", "component": "TourBlog1" }
+            ]
+          },
+          "about-us": {
+            "components": [
+              { "key": "PageBanner", "component": "TourPageBanner1" },
+              { "key": "About", "component": "TourAbout1" }
+            ]
+          },
+          "rooms": {
+            "components": [
+              { "key": "PageBanner", "component": "TourPageBanner1" },
+              { "key": "RoomsListing", "component": "TourRoomsListing1" }
+            ]
+          },
+          "why-choose-us": {
+            "components": [
+              { "key": "PageBanner", "component": "TourPageBanner1" },
+              { "key": "WhyChooseUs", "component": "TourWhyChooseUs1" }
+            ]
+          },
+          "testimonials": {
+            "components": [
+              { "key": "PageBanner", "component": "TourPageBanner1" },
+              { "key": "Testimonial", "component": "TourTestimonial1" }
+            ]
+          },
+          "faq": {
+            "components": [
+              { "key": "PageBanner", "component": "TourPageBanner1" },
+              { "key": "FAQ", "component": "TourFAQ1" }
+            ]
+          },
+          "contact": {
+            "components": [
+              { "key": "PageBanner", "component": "TourPageBanner1" },
+              { "key": "ContactDetails", "component": "TourContact1" }
+            ]
+          }
+        }
+      }
+    },
+    "sections": {
+      "Topbar": {
+        "variants": {
+          "TourTopbar1": {
+            "location": "Golden Palm Hotel & Resort, Luxury Beachfront Avenue",
+            "timing": "24/7 Front Desk & Concierge Service",
+            "phone": "+1 000-000-000",
+            "email": "reservations@goldenpalm.com",
+            "social": [
+              {
+                "name": "Facebook",
+                "icon": "facebook",
+                "href": "https://www.facebook.com/"
+              },
+              {
+                "name": "Instagram",
+                "icon": "instagram",
+                "href": "https://www.instagram.com/"
+              },
+              {
+                "name": "Twitter",
+                "icon": "twitter",
+                "href": "https://x.com/"
+              },
+              {
+                "name": "LinkedIn",
+                "icon": "linkedin",
+                "href": "https://www.linkedin.com/"
+              }
+            ]
+          }
+        }
+      },
+      "Header": {
+        "variants": {
+          "TourHeader1": {
+            "logo": "/logo.png",
+            "logoAlt": "Golden Palm Hotel & Resort",
+            "phone": "+1 000-000-000",
+            "phoneHref": "tel:++1000000000",
+            "button": {
+              "text": "+1 000-000-000",
+              "href": "tel:++1000000000",
+              "icon": "phone",
+              "type": "phone"
+            },
+            "links": [
+              {
+                "name": "Home",
+                "href": "#home",
+                "active": true
+              },
+              {
+                "name": "About Us",
+                "href": "#about-us",
+                "hasDropdown": false
+              },
+              {
+                "name": "Our Rooms",
+                "href": "#rooms",
+                "hasDropdown": false
+              },
+              {
+                "name": "Why Choose Us",
+                "href": "#why-choose-us",
+                "hasDropdown": false
+              },
+              {
+                "name": "Testimonials",
+                "href": "#testimonials",
+                "hasDropdown": false
+              },
+              {
+                "name": "FAQs",
+                "href": "#faq",
+                "hasDropdown": false
+              },
+              {
+                "name": "Contact Us",
+                "href": "#contact",
+                "hasDropdown": false
+              }
+            ]
+          }
+        }
+      },
+      "Banner": {
+        "variants": {
+          "TourBanner1": {
+            "backgroundImage": "/hero-bg.webp",
+            "palmLogo": "/palm-logo.webp",
+            "stars": 5,
+            "headingLine1": "Book Your Dream Hotel",
+            "headingLine2": "With Golden Palm",
+            "buttons": {
+              "primary": {
+                "text": "Book Your Stay",
+                "href": "#contact",
+                "icon": "calendar"
+              },
+              "secondary": {
+                "text": "Explore Rooms",
+                "href": "#rooms",
+                "icon": "play"
+              }
+            }
+          }
+        }
+      },
+      "WhyChooseUs": {
+        "variants": {
+          "TourWhyChooseUs1": {
+            "eyebrow": "WHY CHOOSE US",
+            "headingLine1": "A Luxurious Stay for",
+            "headingLine2": "Relaxation &",
+            "headingHighlight": "Unforgettable Stays",
+            "features": [
+              {
+                "title": "Premium Comfort",
+                "description": "Elegantly designed rooms with modern amenities.",
+                "icon": "bed"
+              },
+              {
+                "title": "Culinary Excellence",
+                "description": "A delightful dining experience with multi-cuisine options.",
+                "icon": "dining"
+              },
+              {
+                "title": "Prime Location",
+                "description": "Conveniently located near major attractions.",
+                "icon": "location"
+              },
+              {
+                "title": "Personalized Service",
+                "description": "Warm, attentive and professional hospitality.",
+                "icon": "service"
+              }
+            ],
+            "stats": [
+              {
+                "value": "150+",
+                "label": "Luxury Rooms",
+                "icon": "bed"
+              },
+              {
+                "value": "25+",
+                "label": "Dining Options",
+                "icon": "dining"
+              },
+              {
+                "value": "10K+",
+                "label": "Happy Guests",
+                "icon": "guests"
+              },
+              {
+                "value": "5★",
+                "label": "Guest Rating",
+                "icon": "rating"
+              }
+            ],
+            "image": "/why-choose-us/suite.webp",
+            "alt": "A Luxurious Stay for Relaxation and Unforgettable Stays"
+          }
+        }
+      },
+      "About": {
+        "variants": {
+          "TourAbout1": {
+            "eyebrow": "ABOUT US",
+            "headingPart1": "A Luxurious Retreat",
+            "headingPart2": "for Relaxation &",
+            "headingHighlight": "Unforgettable Stays",
+            "description": "Welcome to Golden Palm Hotel & Resort, where modern luxury meets warm hospitality. Nestled in a serene location, we offer elegant accommodations, world-class amenities and personalized service to make your stay truly memorable.",
+            "features": [
+              {
+                "icon": "bed",
+                "line1": "Luxury",
+                "line2": "Rooms"
+              },
+              {
+                "icon": "dining",
+                "line1": "Multi-Cuisine",
+                "line2": "Dining"
+              },
+              {
+                "icon": "amenities",
+                "line1": "Resort",
+                "line2": "Amenities"
+              }
+            ],
+            "images": {
+              "main": "/about/about-main.webp",
+              "topRight": "/about/about-cabana.webp",
+              "bottomRight": "/about/about-dining.webp",
+              "alt": "Golden Palm Hotel & Resort Experience"
+            }
+          }
+        }
+      },
+      "Rooms": {
+        "variants": {
+          "TourRooms1": {
+            "eyebrow": "OUR ROOMS",
+            "heading": "Comfortable Rooms & Suites",
+            "description": "Choose from our elegant rooms, designed for comfort, style and a relaxing stay.",
+            "rooms": [
+              {
+                "id": "luxury-room",
+                "title": "Luxury Room",
+                "price": "$329",
+                "priceUnit": "/ Per Night",
+                "stars": 5,
+                "image": "/rooms/room-luxury.webp",
+                "alt": "Golden Palm Luxury Room"
+              },
+              {
+                "id": "single-room",
+                "title": "Single Room",
+                "price": "$299",
+                "priceUnit": "/ Per Night",
+                "stars": 5,
+                "image": "/rooms/room-single.webp",
+                "alt": "Golden Palm Single Room"
+              },
+              {
+                "id": "double-room",
+                "title": "Double Room",
+                "price": "$359",
+                "priceUnit": "/ Per Night",
+                "stars": 5,
+                "image": "/rooms/room-double.webp",
+                "alt": "Golden Palm Double Room"
+              },
+              {
+                "id": "deluxe-suite",
+                "title": "Deluxe Suite",
+                "price": "$429",
+                "priceUnit": "/ Per Night",
+                "stars": 5,
+                "image": "/rooms/room-deluxe.webp",
+                "alt": "Golden Palm Deluxe Suite"
+              },
+              {
+                "id": "executive-suite",
+                "title": "Executive Suite",
+                "price": "$489",
+                "priceUnit": "/ Per Night",
+                "stars": 5,
+                "image": "/rooms/room-executive.webp",
+                "alt": "Golden Palm Executive Suite"
+              },
+              {
+                "id": "presidential-villa",
+                "title": "Presidential Villa",
+                "price": "$599",
+                "priceUnit": "/ Per Night",
+                "stars": 5,
+                "image": "/rooms/room-presidential.webp",
+                "alt": "Golden Palm Presidential Villa"
+              }
+            ]
+          }
+        }
+      },
+      "Amenities": {
+        "variants": {
+          "TourAmenities1": {
+            "eyebrow": "EXPLORE OUR SERVICES",
+            "heading": "Hotel Amenities & Facilities",
+            "phoneBox": {
+              "badgeText": "Book Your Stay",
+              "phone": "+1 000-000-000",
+              "phoneHref": "tel:++1000000000"
+            },
+            "items": [
+              {
+                "id": "restaurant",
+                "number": "01",
+                "title": "Multi-Cuisine Restaurant",
+                "icon": "restaurant",
+                "image": "/amenities/restaurant.webp",
+                "alt": "Golden Palm Multi-Cuisine Restaurant",
+                "descriptionPoints": [
+                  "Savor a variety of global cuisines crafted by expert chefs.",
+                  "A perfect setting for casual dining, family meals or business lunches.",
+                  "Fresh ingredients, diverse menus and a warm, inviting ambiance."
+                ],
+                "cta": {
+                  "text": "Read More →",
+                  "href": "#book-stay"
+                }
+              },
+              {
+                "id": "banquet",
+                "number": "02",
+                "title": "Banquet & Events",
+                "icon": "banquet",
+                "image": "/amenities/banquet.webp",
+                "alt": "Golden Palm Banquet & Events Hall",
+                "descriptionPoints": [
+                  "Grand banquet hall designed for weddings, galas and social celebrations.",
+                  "State-of-the-art audiovisual setups and tailored event management.",
+                  "Customized catering menus to impress your guests on every occasion."
+                ],
+                "cta": {
+                  "text": "Read More →",
+                  "href": "#contact"
+                }
+              },
+              {
+                "id": "sports-bar",
+                "number": "03",
+                "title": "Sports Bar",
+                "icon": "sports-bar",
+                "image": "/amenities/sports-bar.webp",
+                "alt": "Golden Palm Sports Bar & Lounge",
+                "descriptionPoints": [
+                  "Catch live sporting action on ultra-high-definition panoramic screens.",
+                  "Handcrafted cocktails, premium spirits and delicious gourmet finger food.",
+                  "An energetic yet sophisticated atmosphere for relaxing with friends."
+                ],
+                "cta": {
+                  "text": "Read More →",
+                  "href": "#contact"
+                }
+              },
+              {
+                "id": "kids-play-zone",
+                "number": "04",
+                "title": "Kids' Play Zone",
+                "icon": "kids-zone",
+                "image": "/amenities/kids-zone.webp",
+                "alt": "Golden Palm Kids' Play Zone",
+                "descriptionPoints": [
+                  "A colorful, safe and supervised wonderland for children of all ages.",
+                  "Interactive learning games, soft play structures and creative activities.",
+                  "Gives parents complete peace of mind while enjoying resort facilities."
+                ],
+                "cta": {
+                  "text": "Read More →",
+                  "href": "#contact"
+                }
+              },
+              {
+                "id": "activity-room",
+                "number": "05",
+                "title": "Activity Room",
+                "icon": "activity-room",
+                "image": "/amenities/activity-room.webp",
+                "alt": "Golden Palm Fitness & Activity Room",
+                "descriptionPoints": [
+                  "Modern fitness center equipped with top-tier cardio and strength gear.",
+                  "Dedicated spaces for yoga, stretching, indoor sports and wellness sessions.",
+                  "Personalized training guidance available upon request for resort guests."
+                ],
+                "cta": {
+                  "text": "Read More →",
+                  "href": "#contact"
+                }
+              },
+              {
+                "id": "mini-theatre",
+                "number": "06",
+                "title": "Mini Theatre",
+                "icon": "mini-theatre",
+                "image": "/amenities/mini-theatre.webp",
+                "alt": "Golden Palm Private Mini Theatre",
+                "descriptionPoints": [
+                  "Exclusive private screening room with plush reclining leather seating.",
+                  "Immersive Dolby surround sound and crystal-clear cinematic projection.",
+                  "Available for private family screenings, presentations and premieres."
+                ],
+                "cta": {
+                  "text": "Read More →",
+                  "href": "#contact"
+                }
+              },
+              {
+                "id": "library-lounge",
+                "number": "07",
+                "title": "Library Lounge",
+                "icon": "library",
+                "image": "/amenities/library-lounge.webp",
+                "alt": "Golden Palm Library Lounge",
+                "descriptionPoints": [
+                  "Quiet sanctuary curated with bestsellers, classics and travel literature.",
+                  "Cozy seating, warm natural lighting and complimentary specialty coffees.",
+                  "The perfect peaceful retreat to read, work or unwind in solitude."
+                ],
+                "cta": {
+                  "text": "Read More →",
+                  "href": "#contact"
+                }
+              },
+              {
+                "id": "conference-room",
+                "number": "08",
+                "title": "Conference Room",
+                "icon": "conference",
+                "image": "/amenities/conference-room.webp",
+                "alt": "Golden Palm Executive Conference Room",
+                "descriptionPoints": [
+                  "High-tech executive boardroom with video conferencing and smart displays.",
+                  "Ergonomic seating for focused corporate meetings and productive summits.",
+                  "Dedicated high-speed connectivity and professional business support."
+                ],
+                "cta": {
+                  "text": "Read More →",
+                  "href": "#contact"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "Facilities": {
+        "variants": {
+          "TourFacilities1": {
+            "eyebrow": "STAY IN OUR LUXURY",
+            "heading": "Hotel Facilities",
+            "cards": [
+              {
+                "id": "airport-pickup",
+                "type": "text",
+                "icon": "plane",
+                "title": "Airport Pickup",
+                "description": "Enjoy hassle-free airport transfers with our comfortable and reliable service."
+              },
+              {
+                "id": "wifi",
+                "type": "text",
+                "icon": "wifi",
+                "title": "High-Speed Wi-Fi",
+                "description": "Stay connected with our complimentary high-speed internet throughout the hotel."
+              },
+              {
+                "id": "wifi-image",
+                "type": "image",
+                "image": "/facilities/facility-wifi.webp",
+                "alt": "Golden Palm High-Speed Wi-Fi Work Area"
+              },
+              {
+                "id": "pool-image",
+                "type": "image",
+                "image": "/facilities/facility-pool.webp",
+                "alt": "Golden Palm Luxury Swimming Pool"
+              },
+              {
+                "id": "swimming-pool",
+                "type": "text",
+                "icon": "swimming",
+                "title": "Swimming Pool",
+                "description": "Relax and refresh at our spacious, well-maintained swimming pool."
+              },
+              {
+                "id": "tour-guide",
+                "type": "text",
+                "icon": "tour-guide",
+                "title": "City Tour Guide",
+                "description": "Explore the city’s top attractions with our experienced tour guide service."
+              }
+            ]
+          }
+        }
+      },
+      "FAQ": {
+        "variants": {
+          "TourFAQ1": {
+            "eyebrow": "FREQUENTLY ASKED QUESTIONS",
+            "headingPart1": "FAQ",
+            "headingHighlight": "s",
+            "image": "/faq/FAQ.webp",
+            "alt": "Golden Palm Hotel Concierge Desk with Call Bell",
+            "items": [
+              {
+                "id": "faq-1",
+                "question": "What are the check-in and check-out times?",
+                "answer": "Check-in time is from 2:00 PM, and check-out time is until 11:00 AM. Early check-in and late check-out are subject to availability."
+              },
+              {
+                "id": "faq-2",
+                "question": "Do you offer airport transportation?",
+                "answer": "Yes, we offer comfortable airport transfers upon request. Please contact our concierge team with your flight details at least 24 hours in advance."
+              },
+              {
+                "id": "faq-3",
+                "question": "Is breakfast included in the room rate?",
+                "answer": "A complimentary gourmet breakfast buffet is included with select room categories. You can also add daily breakfast during booking or upon arrival."
+              },
+              {
+                "id": "faq-4",
+                "question": "Are pets allowed at the hotel?",
+                "answer": "We welcome well-behaved pets in designated pet-friendly suites. Please notify us prior to arrival so we can prepare specialized pet amenities."
+              },
+              {
+                "id": "faq-5",
+                "question": "Do you have free Wi-Fi in the rooms?",
+                "answer": "Yes, high-speed complimentary Wi-Fi is accessible throughout the entire property, including all guest rooms, suites, and public resort areas."
+              },
+              {
+                "id": "faq-6",
+                "question": "Can I modify or cancel my reservation?",
+                "answer": "Reservations can be modified or cancelled free of charge up to 48 hours prior to arrival for flexible rates. Specific terms may apply to promotional bookings."
+              }
+            ]
+          }
+        }
+      },
+      "VideoBanner": {
+        "variants": {
+          "TourVideoBanner1": {
+            "eyebrow": "PROMOTIONAL VIDEO",
+            "heading": "Your Journey Begins with Our Booking",
+            "backgroundImage": "/video.webp",
+            "youtubeVideoId": "dQw4w9WgXcQ",
+            "youtubeUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          }
+        }
+      },
+      "Testimonial": {
+        "variants": {
+          "TourTestimonial1": {
+            "eyebrow": "OUR GUEST STORIES",
+            "headingPart1": "What Our Guests",
+            "headingHighlight": "Say?",
+            "backgroundImage": "/testimonials/testimonial-bg.webp",
+            "items": [
+              {
+                "id": "testimonial-1",
+                "name": "James Carter",
+                "role": "Business Traveler",
+                "avatar": "/testimonials/avatar-james.webp",
+                "quote": "A truly luxurious experience! The rooms are elegant, the staff is courteous, and the service is exceptional. Highly recommended for a comfortable and relaxing stay.",
+                "rating": 5
+              },
+              {
+                "id": "testimonial-2",
+                "name": "Emily Watson",
+                "role": "Leisure Guest",
+                "avatar": "/testimonials/avatar-emily.webp",
+                "quote": "The perfect blend of comfort, luxury, and great hospitality. The food was delicious, and the ambience was absolutely wonderful. I will definitely be coming back!",
+                "rating": 5
+              },
+              {
+                "id": "testimonial-3",
+                "name": "Daniel Brooks",
+                "role": "Corporate Guest",
+                "avatar": "/testimonials/avatar-daniel.webp",
+                "quote": "An amazing stay from start to finish. The location is convenient, the rooms are well-maintained, and the team makes you feel truly welcome. A five-star experience!",
+                "rating": 5
+              },
+              {
+                "id": "testimonial-4",
+                "name": "Sarah Jenkins",
+                "role": "Family Vacationer",
+                "avatar": "/testimonials/avatar-sarah.webp",
+                "quote": "From the infinity pool to the breathtaking views, our family vacation was pure bliss. Impeccable attention to detail and genuinely warm service throughout.",
+                "rating": 5
+              }
+            ]
+          }
+        }
+      },
+      "Contact": {
+        "variants": {
+          "TourContact1": {
+            "eyebrow": "CONTACT US",
+            "heading": "Get in Touch",
+            "image": "/contact/contact-bed.webp",
+            "alt": "Golden Palm Luxury Bedroom Suite",
+            "inquiryBox": {
+              "badgeText": "Call us for any inquiry",
+              "phone": "+1 000-000-000",
+              "phoneHref": "tel:+1000000000"
+            },
+            "form": {
+              "namePlaceholder": "Your Name",
+              "emailPlaceholder": "Email Address",
+              "checkInPlaceholder": "Check In",
+              "checkOutPlaceholder": "Check Out",
+              "messagePlaceholder": "Write a Message",
+              "buttonText": "CHECK AVAILABILITY"
+            }
+          }
+        }
+      },
+      "Footer": {
+        "variants": {
+          "TourFooter1": {
+            "brand": {
+              "logo": "/palm-logo.webp",
+              "brandName": "Golden Palm",
+              "brandTagline": "HOTEL & RESORT",
+              "description": "A premium hotel & resort offering luxurious accommodations, modern amenities, and a truly relaxing stay."
+            },
+            "quickLinks": {
+              "title": "Quick Links",
+              "links": [
+                { "name": "Home", "href": "#home" },
+                { "name": "Rooms & Suites", "href": "#rooms" },
+                { "name": "Amenities", "href": "#services" }
+              ]
+            },
+            "more": {
+              "title": "More",
+              "links": [
+                { "name": "Packages", "href": "#rooms" },
+                { "name": "Gallery", "href": "#amenities" },
+                { "name": "FAQs", "href": "#faq" }
+              ]
+            },
+            "contact": {
+              "title": "Contact",
+              "phone": "+1 000-000-000",
+              "phoneHref": "tel:+1000000000",
+              "email": "info@xyz.com",
+              "emailHref": "mailto:info@xyz.com",
+              "address": "123 Palm Avenue, Miami, FL 33101, United States"
+            },
+            "followUs": {
+              "title": "Follow Us",
+              "socials": [
+                { "platform": "facebook", "href": "https://facebook.com", "icon": "facebook" },
+                { "platform": "instagram", "href": "https://instagram.com", "icon": "instagram" },
+                { "platform": "youtube", "href": "https://youtube.com", "icon": "youtube" },
+                { "platform": "linkedin", "href": "https://linkedin.com", "icon": "linkedin" }
+              ]
+            },
+            "bottomBar": {
+              "copyright": "©2026 All Rights Reserved. Powered by Lestow"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Hotel": {
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "Topbar": "TourTopbar1",
+          "Header": "TourHeader1",
+          "Footer": "TourFooter1"
+        }
+      }
+    },
+    "sections": {
+      "Topbar": {
+        "variants": {
+          "TourTopbar1": {
+            "location": "Golden Palm Hotel & Resort, Luxury Beachfront Avenue",
+            "timing": "24/7 Front Desk & Concierge Service",
+            "phone": "+1 000-000-000",
+            "email": "reservations@goldenpalm.com",
+            "social": [
+              { "name": "Facebook", "icon": "facebook", "href": "https://www.facebook.com/" },
+              { "name": "Instagram", "icon": "instagram", "href": "https://www.instagram.com/" },
+              { "name": "Twitter", "icon": "twitter", "href": "https://x.com/" },
+              { "name": "LinkedIn", "icon": "linkedin", "href": "https://www.linkedin.com/" }
+            ]
+          }
+        }
+      },
+      "Header": {
+        "variants": {
+          "TourHeader1": {
+            "logo": "/logo.png",
+            "logoAlt": "Golden Palm Hotel & Resort",
+            "phone": "+1 000-000-000",
+            "phoneHref": "tel:++1000000000",
+            "button": {
+              "text": "+1 000-000-000",
+              "href": "tel:++1000000000",
+              "icon": "phone",
+              "type": "phone"
+            },
+            "links": [
+              { "name": "Home", "href": "#home", "active": true },
+              { "name": "About Us", "href": "#about-us" },
+              { "name": "Our Rooms", "href": "#rooms" },
+              { "name": "Why Choose Us", "href": "#why-choose-us" },
+              { "name": "Testimonials", "href": "#testimonials" },
+              { "name": "FAQs", "href": "#faq" },
+              { "name": "Contact Us", "href": "#contact" }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
