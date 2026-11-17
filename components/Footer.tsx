@@ -53,22 +53,28 @@ export default function Footer({
       "A premium hotel & resort offering luxurious accommodations, modern amenities, and a truly relaxing stay.",
   };
 
-  const quickLinks = data?.quickLinks || {
-    title: "Quick Links",
-    links: [
-      { name: "Home", href: "#home" },
-      { name: "Rooms & Suites", href: "#rooms" },
-      { name: "Amenities", href: "#services" },
-    ],
-  };
+  const navbarLinks =
+    siteData.Tour?.sections?.Header?.variants?.TourHeader1?.links || [];
 
-  const more = data?.more || {
-    title: "More",
-    links: [
-      { name: "Packages", href: "#rooms" },
-      { name: "Gallery", href: "#amenities" },
-      { name: "FAQs", href: "#faq" },
-    ],
+  const defaultQuickLinks =
+    navbarLinks.length > 0
+      ? navbarLinks.map((link) => ({ name: link.name, href: link.href }))
+      : [
+          { name: "Home", href: "#home" },
+          { name: "About Us", href: "#about-us" },
+          { name: "Our Rooms", href: "#rooms" },
+          { name: "Why Choose Us", href: "#why-choose-us" },
+          { name: "Testimonials", href: "#testimonials" },
+          { name: "FAQs", href: "#faq" },
+          { name: "Contact Us", href: "#contact" },
+        ];
+
+  const quickLinks = {
+    title: data?.quickLinks?.title || "Quick Links",
+    links:
+      data?.quickLinks?.links && data.quickLinks.links.length > 0
+        ? data.quickLinks.links
+        : defaultQuickLinks,
   };
 
   const contact = data?.contact || {
@@ -179,13 +185,13 @@ export default function Footer({
     <footer
       id="footer"
       ref={sectionRef}
-      className={`relative w-full bg-[#003b29] text-white pt-14 sm:pt-16 lg:pt-[70px] pb-10 px-5 sm:px-8 lg:px-10 overflow-hidden ${className}`}
+      className={`relative w-full bg-[#003b29] text-white pt-14 pb-10 px-5 sm:px-8 lg:px-10 overflow-hidden ${className}`}
     >
       <div className="relative z-10 max-w-[1280px] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2.35fr_1.25fr_1.05fr_1.95fr_1.35fr] gap-9 lg:gap-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2.4fr_1.6fr_2.2fr_1.4fr] gap-9 lg:gap-0">
           <div
             style={sectionAnimation(0)}
-            className={`lg:pr-7 xl:pr-9 transition-all duration-700 ${animationClass}`}
+            className={`lg:pr-8 xl:pr-10 transition-all duration-700 ${animationClass}`}
           >
             <div className="mb-5">
               <a
@@ -222,7 +228,7 @@ export default function Footer({
 
           <div
             style={sectionAnimation(100)}
-            className={`lg:px-7 xl:px-8 lg:border-l lg:border-white/30 transition-all duration-700 ${animationClass}`}
+            className={`lg:px-8 xl:px-10 lg:border-l lg:border-white/30 transition-all duration-700 ${animationClass}`}
           >
             <h3 className="font-serif text-[23px] sm:text-[25px] font-bold text-white whitespace-nowrap">
               {quickLinks.title}
@@ -230,7 +236,7 @@ export default function Footer({
 
             <div className="w-[48px] h-[4px] bg-[#e8b333] mt-3 mb-6" />
 
-            <ul className="space-y-4">
+            <ul className="space-y-3.5">
               {quickLinks.links.map((link) => (
                 <li key={link.name}>
                   <a
@@ -248,33 +254,7 @@ export default function Footer({
 
           <div
             style={sectionAnimation(200)}
-            className={`lg:px-7 xl:px-8 lg:border-l lg:border-white/30 transition-all duration-700 ${animationClass}`}
-          >
-            <h3 className="font-serif text-[23px] sm:text-[25px] font-bold text-white">
-              {more.title}
-            </h3>
-
-            <div className="w-[48px] h-[4px] bg-[#e8b333] mt-3 mb-6" />
-
-            <ul className="space-y-4">
-              {more.links.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    className="group inline-flex items-center gap-2.5 text-[15px] sm:text-base text-white/90 hover:text-[#e8b333] transition-colors"
-                  >
-                    <ChevronRight className="w-[17px] h-[17px] text-[#e8b333] shrink-0 group-hover:translate-x-1 transition-transform" />
-                    <span>{link.name}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div
-            style={sectionAnimation(300)}
-            className={`lg:px-7 xl:px-8 lg:border-l lg:border-white/30 transition-all duration-700 ${animationClass}`}
+            className={`lg:px-8 xl:px-10 lg:border-l lg:border-white/30 transition-all duration-700 ${animationClass}`}
           >
             <h3 className="font-serif text-[23px] sm:text-[25px] font-bold text-white">
               {contact.title}
@@ -329,8 +309,8 @@ export default function Footer({
           </div>
 
           <div
-            style={sectionAnimation(400)}
-            className={`lg:pl-7 xl:pl-8 lg:border-l lg:border-white/30 transition-all duration-700 ${animationClass}`}
+            style={sectionAnimation(300)}
+            className={`lg:pl-8 xl:pl-10 lg:border-l lg:border-white/30 transition-all duration-700 ${animationClass}`}
           >
             <h3 className="font-serif text-[23px] sm:text-[25px] font-bold text-white whitespace-nowrap">
               {followUs.title}

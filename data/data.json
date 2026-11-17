@@ -660,16 +660,12 @@
               "title": "Quick Links",
               "links": [
                 { "name": "Home", "href": "#home" },
-                { "name": "Rooms & Suites", "href": "#rooms" },
-                { "name": "Amenities", "href": "#services" }
-              ]
-            },
-            "more": {
-              "title": "More",
-              "links": [
-                { "name": "Packages", "href": "#rooms" },
-                { "name": "Gallery", "href": "#amenities" },
-                { "name": "FAQs", "href": "#faq" }
+                { "name": "About Us", "href": "#about-us" },
+                { "name": "Our Rooms", "href": "#rooms" },
+                { "name": "Why Choose Us", "href": "#why-choose-us" },
+                { "name": "Testimonials", "href": "#testimonials" },
+                { "name": "FAQs", "href": "#faq" },
+                { "name": "Contact Us", "href": "#contact" }
               ]
             },
             "contact": {
@@ -690,7 +686,7 @@
               ]
             },
             "bottomBar": {
-              "copyright": "©2026 All Rights Reserved. Powered by Lestow"
+              "copyright": "© 2025 Golden Palm Hotel & Resort. All Rights Reserved."
             }
           }
         }

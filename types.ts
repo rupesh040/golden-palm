@@ -161,7 +161,7 @@ export interface FooterData {
     description: string;
   };
   quickLinks: FooterColumn;
-  more: FooterColumn;
+  more?: FooterColumn;
   contact: FooterContact;
   followUs: {
     title: string;
