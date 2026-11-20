@@ -40,6 +40,11 @@ export default function Hero({ data: customData, className = "" }: HeroProps) {
   const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
       e.preventDefault();
+
+      if (window.location.hash !== href) {
+        window.history.pushState(null, "", href);
+      }
+
       const targetId = href.replace(/^#/, "");
       if (targetId === "home") {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -48,8 +53,8 @@ export default function Hero({ data: customData, className = "" }: HeroProps) {
       const el = document.getElementById(targetId);
       if (el) {
         const navHeight = 80;
-        const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
-        window.scrollTo({ top, behavior: "smooth" });
+        const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+        window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
       }
     }
   };
@@ -75,7 +80,7 @@ export default function Hero({ data: customData, className = "" }: HeroProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/75" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20 lg:py-24 text-center flex flex-col items-center">
         <div
           className={`flex items-center justify-center gap-2 mb-4 sm:mb-6 transition-all duration-700 delay-100 ease-out transform ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
@@ -89,16 +94,16 @@ export default function Hero({ data: customData, className = "" }: HeroProps) {
           ))}
         </div>
 
-        <h1 className="font-serif text-white font-medium text-4xl sm:text-6xl md:text-7xl lg:text-[76px] tracking-tight leading-[1.12] max-w-4xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
+        <h1 className="font-serif text-white font-medium text-[25px] min-[360px]:text-[28px] min-[390px]:text-[32px] sm:text-5xl md:text-6xl lg:text-[76px] tracking-tight leading-[1.18] sm:leading-[1.12] max-w-4xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
           <span
-            className={`block transition-all duration-700 delay-200 ease-out transform ${
+            className={`block whitespace-nowrap sm:whitespace-normal transition-all duration-700 delay-200 ease-out transform ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
             {heading1}
           </span>
           <span
-            className={`block transition-all duration-700 delay-350 ease-out transform ${
+            className={`block whitespace-nowrap sm:whitespace-normal transition-all duration-700 delay-350 ease-out transform ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >

@@ -193,6 +193,7 @@ export interface ContactFormConfig {
   checkOutPlaceholder: string;
   messagePlaceholder: string;
   buttonText: string;
+  successMessage?: string;
 }
 
 export interface ContactData {

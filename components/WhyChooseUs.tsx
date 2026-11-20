@@ -178,10 +178,10 @@ export default function WhyChooseUs({
     <section
       id="why-choose-us"
       ref={sectionRef}
-      className={`relative w-full bg-white text-neutral-900 py-12 sm:py-16 lg:py-[55px] px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}
+      className={`relative w-full bg-white text-neutral-900 py-5 sm:py-10 lg:py-[55px] px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}
     >
       <div className="max-w-[1280px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-6 xl:gap-7 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6 sm:gap-8 lg:gap-6 xl:gap-7 items-stretch">
           <div className="flex flex-col justify-between min-w-0">
             <div>
               <div
@@ -191,7 +191,7 @@ export default function WhyChooseUs({
                     : "opacity-0 -translate-y-4"
                 }`}
               >
-                <span className="text-[#b98227] font-bold text-sm sm:text-base tracking-[0.04em] uppercase whitespace-nowrap">
+                <span className="text-[#b98227] font-bold text-xs sm:text-sm tracking-widest uppercase shrink-0 whitespace-nowrap">
                   {eyebrow}
                 </span>
 
@@ -199,14 +199,14 @@ export default function WhyChooseUs({
               </div>
 
               <h2
-                className={`font-serif text-[34px] sm:text-[42px] lg:text-[40px] xl:text-[46px] font-bold text-[#100e0d] tracking-[-0.035em] leading-[1.12] mb-5 transition-all duration-700 delay-150 ${
+                className={`font-serif text-[19px] min-[360px]:text-[21px] min-[390px]:text-[24px] sm:text-4xl lg:text-[44px] font-bold text-[#100e0d] tracking-tight leading-[1.18] sm:leading-[1.15] mb-5 transition-all duration-700 delay-150 ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-6"
                 }`}
               >
-                <span className="block">{headingLine1}</span>
-                <span className="block">
+                <span className="block whitespace-nowrap">{headingLine1}</span>
+                <span className="block whitespace-nowrap">
                   {headingLine2}{" "}
                   <span className="text-[#bd8428]">
                     {headingHighlight}
@@ -242,11 +242,11 @@ export default function WhyChooseUs({
                     <div className="w-[3px] h-[64px] bg-[#bd8428] shrink-0" />
 
                     <div className="min-w-0">
-                      <h3 className="font-serif text-[19px] sm:text-[21px] lg:text-[20px] xl:text-[22px] font-bold text-[#17110e] leading-tight mb-1 group-hover:text-[#b98227] transition-colors">
+                      <h3 className="font-serif text-lg sm:text-xl font-bold text-[#17110e] leading-tight mb-1 group-hover:text-[#b98227] transition-colors">
                         {feature.title}
                       </h3>
 
-                      <p className="text-[14px] sm:text-[15px] lg:text-[14px] xl:text-[15px] text-[#292929] font-normal leading-[1.4]">
+                      <p className="text-sm sm:text-base text-[#292929] font-normal leading-relaxed">
                         {feature.description}
                       </p>
                     </div>

@@ -108,6 +108,10 @@ export default function Footer({
 
     e.preventDefault();
 
+    if (window.location.hash !== href) {
+      window.history.pushState(null, "", href);
+    }
+
     const targetId = href.replace(/^#/, "");
 
     if (targetId === "home" || targetId === "") {
@@ -122,7 +126,7 @@ export default function Footer({
         element.getBoundingClientRect().top + window.scrollY - 80;
 
       window.scrollTo({
-        top: offset,
+        top: Math.max(0, offset),
         behavior: "smooth",
       });
     }
@@ -185,10 +189,10 @@ export default function Footer({
     <footer
       id="footer"
       ref={sectionRef}
-      className={`relative w-full bg-[#003b29] text-white pt-14 pb-10 px-5 sm:px-8 lg:px-10 overflow-hidden ${className}`}
+      className={`relative w-full bg-[#003b29] text-white pt-7 pb-6 sm:pt-14 sm:pb-10 px-4 sm:px-8 lg:px-10 overflow-hidden ${className}`}
     >
       <div className="relative z-10 max-w-[1280px] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2.4fr_1.6fr_2.2fr_1.4fr] gap-9 lg:gap-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2.4fr_1.6fr_2.2fr_1.4fr] gap-7 sm:gap-9 lg:gap-0">
           <div
             style={sectionAnimation(0)}
             className={`lg:pr-8 xl:pr-10 transition-all duration-700 ${animationClass}`}
@@ -230,7 +234,7 @@ export default function Footer({
             style={sectionAnimation(100)}
             className={`lg:px-8 xl:px-10 lg:border-l lg:border-white/30 transition-all duration-700 ${animationClass}`}
           >
-            <h3 className="font-serif text-[23px] sm:text-[25px] font-bold text-white whitespace-nowrap">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-white whitespace-nowrap">
               {quickLinks.title}
             </h3>
 
@@ -256,7 +260,7 @@ export default function Footer({
             style={sectionAnimation(200)}
             className={`lg:px-8 xl:px-10 lg:border-l lg:border-white/30 transition-all duration-700 ${animationClass}`}
           >
-            <h3 className="font-serif text-[23px] sm:text-[25px] font-bold text-white">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
               {contact.title}
             </h3>
 
@@ -345,7 +349,7 @@ export default function Footer({
             style={sectionAnimation(300)}
             className={`lg:pl-8 xl:pl-10 lg:border-l lg:border-white/30 transition-all duration-700 ${animationClass}`}
           >
-            <h3 className="font-serif text-[23px] sm:text-[25px] font-bold text-white whitespace-nowrap">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-white whitespace-nowrap">
               {followUs.title}
             </h3>
 
@@ -370,7 +374,7 @@ export default function Footer({
 
         <div className="w-full h-[2px] bg-[#e8b333] mt-12 lg:mt-[60px] mb-6" />
 
-        <div className="text-center text-[14px] sm:text-base text-white/95 font-normal tracking-wide">
+        <div className="text-center text-xs sm:text-sm text-white/95 font-normal tracking-wide">
           {copyright}
         </div>
       </div>

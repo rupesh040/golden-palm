@@ -86,7 +86,7 @@ export default function VideoBanner({
       <section
         id="promotional-video"
         ref={sectionRef}
-        className={`relative w-full min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] flex items-center justify-center text-center overflow-hidden ${className}`}
+        className={`relative w-full min-h-[300px] sm:min-h-[460px] lg:min-h-[580px] flex items-center justify-center text-center overflow-hidden ${className}`}
       >
         <div className="absolute inset-0 z-0">
           <Image
@@ -101,7 +101,7 @@ export default function VideoBanner({
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40" />
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 lg:py-20 flex flex-col items-center">
           <div
             className={`flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-5 transition-all duration-700 ease-out transform ${
               isVisible
@@ -118,7 +118,7 @@ export default function VideoBanner({
             >
               <path d="M0 6c6 0 6-5 12-5s6 10 12 10 6-5 8-5" />
             </svg>
-            <span className="text-[#c59d5f] font-bold text-xs sm:text-sm tracking-[0.25em] uppercase">
+            <span className="text-[#c59d5f] font-bold text-xs sm:text-sm tracking-widest uppercase">
               {eyebrow}
             </span>
             <svg
@@ -133,7 +133,7 @@ export default function VideoBanner({
           </div>
 
           <h2
-            className={`font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-white tracking-tight leading-[1.18] mb-8 sm:mb-10 max-w-4xl transition-all duration-700 delay-150 ease-out transform ${
+            className={`font-serif text-2xl sm:text-4xl lg:text-[44px] font-bold text-white tracking-tight leading-[1.2] sm:leading-[1.15] mb-8 sm:mb-10 max-w-3xl text-balance transition-all duration-700 delay-150 ease-out transform ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-6"

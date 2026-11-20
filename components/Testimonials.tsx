@@ -82,7 +82,7 @@ export default function Testimonials({
     <section
       id="testimonials"
       ref={sectionRef}
-      className={`relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white text-neutral-900 border-t border-neutral-100 overflow-hidden ${className}`}
+      className={`relative w-full py-5 sm:py-12 lg:py-20 xl:py-24 px-4 sm:px-6 lg:px-8 bg-white text-neutral-900 border-t border-neutral-100 overflow-hidden ${className}`}
     >
       <div className="absolute top-0 left-0 w-full sm:w-[45%] lg:w-[35%] h-full pointer-events-none select-none z-0 overflow-hidden">
         <Image
@@ -97,7 +97,7 @@ export default function Testimonials({
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-7 sm:mb-12 lg:mb-16">
           <div
             className={`flex items-center justify-center gap-3.5 mb-2.5 transition-all duration-700 ease-out transform ${
               isVisible
@@ -150,7 +150,7 @@ export default function Testimonials({
                   </svg>
                 </div>
 
-                <p className="text-sm sm:text-[14.5px] text-neutral-700 font-normal leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-neutral-700 font-normal leading-relaxed mb-6">
                   {item.quote}
                 </p>
               </div>
@@ -225,7 +225,7 @@ export default function Testimonials({
               type="button"
               onClick={handleNext}
               aria-label="Next testimonials"
-              className="w-11 h-11 rounded-lg bg-[#c59d5f] text-white hover:bg-[#b38a4d] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
+              className="w-11 h-11 rounded-lg border border-[#c59d5f] text-[#c59d5f] hover:bg-[#c59d5f] hover:text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
             >
               <ArrowRight className="w-5 h-5" />
             </button>

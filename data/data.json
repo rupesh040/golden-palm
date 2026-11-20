@@ -349,7 +349,7 @@
                 ],
                 "cta": {
                   "text": "Read More →",
-                  "href": "#book-stay"
+                  "href": "#contact"
                 }
               },
               {
@@ -641,7 +641,8 @@
               "checkInPlaceholder": "Check In",
               "checkOutPlaceholder": "Check Out",
               "messagePlaceholder": "Write a Message",
-              "buttonText": "CHECK AVAILABILITY"
+              "buttonText": "CHECK AVAILABILITY",
+              "successMessage": "Thank you! Your availability inquiry has been submitted. Our reservations team will reach out to you shortly."
             }
           }
         }
@@ -686,7 +687,7 @@
               ]
             },
             "bottomBar": {
-              "copyright": "©2026 All Rights Reserved. Powered by Lestow"
+              "copyright": "© 2025 Golden Palm Hotel & Resort. All Rights Reserved."
             }
           }
         }

@@ -62,10 +62,10 @@ export default function Rooms({ data: customData, className = "" }: RoomsProps) 
     <section
       id="rooms"
       ref={sectionRef}
-      className={`relative w-full py-14 px-4 sm:px-6 lg:px-8 bg-white text-neutral-900 border-t border-neutral-100 overflow-hidden ${className}`}
+      className={`relative w-full py-5 sm:py-10 lg:py-14 px-4 sm:px-6 lg:px-8 bg-white text-neutral-900 border-t border-neutral-100 overflow-hidden ${className}`}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-7 sm:mb-12 lg:mb-16">
           <div
             className={`flex items-center justify-center gap-3 mb-3.5 transition-all duration-700 ease-out transform ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"

@@ -81,6 +81,34 @@ export default function Amenities({
   const items: AmenityItem[] = data?.items || [];
   const activeItem = items.find((item) => item.id === activeId) || items[0];
 
+  const handleCtaClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (!href.startsWith("#")) return;
+    e.preventDefault();
+
+    const targetId =
+      href === "#book-stay" ? "contact" : href.replace(/^#/, "");
+    const targetHash = `#${targetId}`;
+
+    if (window.location.hash !== targetHash) {
+      window.history.pushState(null, "", targetHash);
+    }
+
+    if (targetId === "home" || targetId === "") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const el = document.getElementById(targetId);
+    if (el) {
+      const navHeight = 80;
+      const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    }
+  };
+
   const renderIcon = (iconName: string, isCurrentActive: boolean) => {
     const strokeColor = isCurrentActive ? "currentColor" : "#b98228";
 
@@ -163,26 +191,26 @@ export default function Amenities({
     <section
       id="services"
       ref={sectionRef}
-      className={`relative w-full bg-white text-neutral-900 py-12 sm:py-16 lg:py-[52px] px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}
+      className={`relative w-full bg-white text-neutral-900 py-5 sm:py-10 lg:py-[52px] px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}
     >
       <div id="amenities" className="absolute -top-24 pointer-events-none" />
 
       <div className="max-w-[1260px] mx-auto">
         <div
-          className={`flex flex-col lg:flex-row lg:items-center justify-between gap-7 mb-8 lg:mb-8 transition-all duration-700 ${
+          className={`flex flex-col lg:flex-row lg:items-center justify-between gap-7 mb-6 sm:mb-8 transition-all duration-700 ${
             isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-5"
           }`}
         >
           <div className="min-w-0">
-            <span className="text-[#ae761e] font-bold text-sm sm:text-base tracking-[0.06em] uppercase">
+            <span className="text-[#ae761e] font-bold text-xs sm:text-sm tracking-widest uppercase">
               {eyebrow}
             </span>
 
             <div className="w-[105px] h-[3px] bg-[#c18b30] mt-4 mb-4" />
 
-            <h2 className="font-serif text-[34px] sm:text-[44px] lg:text-[50px] xl:text-[54px] font-normal text-[#160f0e] leading-[1.12] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#160f0e] leading-[1.15] tracking-tight">
               {heading}
             </h2>
 
@@ -295,7 +323,7 @@ export default function Amenities({
                       : "opacity-100 translate-y-0"
                   }`}
                 >
-                  <h3 className="font-serif text-[30px] sm:text-[34px] lg:text-[38px] font-bold text-white leading-[1.2] tracking-tight mb-5">
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white leading-[1.2] tracking-tight mb-5">
                     {activeItem.title}
                   </h3>
 
@@ -321,7 +349,10 @@ export default function Amenities({
 
                 <div className="mt-9">
                   <a
-                    href={activeItem.cta?.href || "#book-stay"}
+                    href={activeItem.cta?.href || "#contact"}
+                    onClick={(e) =>
+                      handleCtaClick(e, activeItem.cta?.href || "#contact")
+                    }
                     className="inline-flex items-center justify-center gap-4 bg-gradient-to-r from-[#d4a044] to-[#b77c20] hover:from-[#bd852c] hover:to-[#a56e18] text-white font-bold text-base px-8 py-4 rounded-[12px] shadow-[0_5px_16px_rgba(183,124,28,0.25)] transition-all duration-300 hover:-translate-y-1"
                   >
                     <span>{activeItem.cta?.text || "Read More"}</span>

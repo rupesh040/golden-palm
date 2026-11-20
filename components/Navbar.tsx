@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -24,37 +24,133 @@ export default function Navbar({ data: customData, className = "" }: NavbarProps
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>("home");
 
+  const isProgrammaticScroll = useRef(false);
+  const scrollTimerRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     setMounted(true);
+
+    const sections = [
+      "home",
+      "about-us",
+      "rooms",
+      "services",
+      "facilities",
+      "why-choose-us",
+      "testimonials",
+      "faq",
+      "contact",
+    ];
+
+    const scrollToElement = (targetId: string, smooth: boolean = true) => {
+      if (!targetId || targetId === "home") {
+        window.scrollTo({
+          top: 0,
+          behavior: smooth ? "smooth" : "auto",
+        });
+        setActiveSection("home");
+        return;
+      }
+
+      const el = document.getElementById(targetId);
+      if (el) {
+        const navHeight = 80;
+        const rect = el.getBoundingClientRect();
+        const top = rect.top + window.scrollY - navHeight;
+        window.scrollTo({
+          top: Math.max(0, top),
+          behavior: smooth ? "smooth" : "auto",
+        });
+        setActiveSection(targetId);
+      }
+    };
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ["home", "about-us", "rooms", "services", "facilities", "why-choose-us", "testimonials", "faq", "contact"];
-      const scrollPosition = window.scrollY + 180;
+      const isBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 60;
 
-      for (const sectionId of sections) {
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
-            break;
+      let current = "home";
+
+      if (isBottom) {
+        current = "contact";
+      } else {
+        const scrollPosition = window.scrollY + 160;
+        for (const sectionId of sections) {
+          const el = document.getElementById(sectionId);
+          if (el) {
+            const top = el.getBoundingClientRect().top + window.scrollY;
+            if (scrollPosition >= top) {
+              current = sectionId;
+            }
+          }
+        }
+      }
+
+      setActiveSection(current);
+
+      if (!isProgrammaticScroll.current) {
+        if (current === "home") {
+          if (window.location.hash && window.location.hash !== "#home") {
+            window.history.replaceState(null, "", "#home");
+          }
+        } else {
+          if (window.location.hash !== `#${current}`) {
+            window.history.replaceState(null, "", `#${current}`);
           }
         }
       }
     };
 
+    const handlePopState = () => {
+      const hash = window.location.hash;
+      const targetId = hash.replace(/^#/, "");
+      isProgrammaticScroll.current = true;
+      if (scrollTimerRef.current) clearTimeout(scrollTimerRef.current);
+      scrollTimerRef.current = setTimeout(() => {
+        isProgrammaticScroll.current = false;
+      }, 1000);
+      scrollToElement(targetId, true);
+    };
+
+    if (window.location.hash) {
+      const targetId = window.location.hash.replace(/^#/, "");
+      if (targetId && targetId !== "home") {
+        setTimeout(() => {
+          scrollToElement(targetId, false);
+        }, 150);
+      }
+    }
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("popstate", handlePopState);
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("popstate", handlePopState);
+      if (scrollTimerRef.current) clearTimeout(scrollTimerRef.current);
+    };
   }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       const targetId = href.replace(/^#/, "");
+
+      isProgrammaticScroll.current = true;
+      if (scrollTimerRef.current) {
+        clearTimeout(scrollTimerRef.current);
+      }
+      scrollTimerRef.current = setTimeout(() => {
+        isProgrammaticScroll.current = false;
+      }, 1000);
+
+      if (window.location.hash !== href) {
+        window.history.pushState(null, "", href);
+      }
 
       if (targetId === "home" || targetId === "") {
         window.scrollTo({
@@ -69,10 +165,10 @@ export default function Navbar({ data: customData, className = "" }: NavbarProps
       if (targetElement) {
         const navHeight = 80;
         const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+        const offsetPosition = elementPosition + window.scrollY - navHeight;
 
         window.scrollTo({
-          top: offsetPosition,
+          top: Math.max(0, offsetPosition),
           behavior: "smooth",
         });
         setActiveSection(targetId);
@@ -116,6 +212,12 @@ export default function Navbar({ data: customData, className = "" }: NavbarProps
       return true;
     }
     if (activeSection === "home" && (link.href === "/" || link.href === "#home")) {
+      return true;
+    }
+    if (
+      (activeSection === "services" || activeSection === "facilities") &&
+      (link.href === "#rooms" || hrefClean === "rooms")
+    ) {
       return true;
     }
     if (pathname === link.href && !link.href.startsWith("#")) {
@@ -258,16 +360,7 @@ export default function Navbar({ data: customData, className = "" }: NavbarProps
             )}
           </div>
 
-          <div className="flex items-center gap-3 lg:hidden">
-            {buttonDetails?.isPhone && (
-              <a
-                href={buttonDetails.href}
-                className="p-2 rounded-full border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black transition-colors"
-                aria-label="Call Us"
-              >
-                <Phone className="w-4 h-4 fill-current" />
-              </a>
-            )}
+          <div className="flex items-center lg:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

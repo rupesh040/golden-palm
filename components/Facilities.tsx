@@ -106,10 +106,10 @@ export default function Facilities({
     <section
       id="facilities"
       ref={sectionRef}
-      className={`relative w-full bg-white py-16 sm:py-20 lg:py-[70px] px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}
+      className={`relative w-full bg-white py-5 sm:py-12 lg:py-[70px] px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}
     >
       <div className="max-w-[1260px] mx-auto">
-        <div className="text-center mb-10 sm:mb-12 lg:mb-9">
+        <div className="text-center mb-6 sm:mb-10 lg:mb-9">
           <div
             className={`flex items-center justify-center gap-4 mb-4 transition-all duration-700 ${
               isVisible
@@ -119,7 +119,7 @@ export default function Facilities({
           >
             <span className="w-12 sm:w-[74px] h-[2px] bg-[#c59d5f]" />
 
-            <span className="text-[#a87529] font-bold text-xs sm:text-base tracking-[0.16em] uppercase whitespace-nowrap">
+            <span className="text-[#a87529] font-bold text-xs sm:text-sm tracking-widest uppercase whitespace-nowrap">
               {eyebrow}
             </span>
 
@@ -127,7 +127,7 @@ export default function Facilities({
           </div>
 
           <h2
-            className={`font-serif text-[40px] sm:text-[52px] lg:text-[70px] font-bold text-[#160f0e] leading-[1.1] tracking-tight transition-all duration-700 delay-100 ${
+            className={`font-serif text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#160f0e] leading-[1.15] tracking-tight transition-all duration-700 delay-100 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-6"
@@ -183,11 +183,11 @@ export default function Facilities({
                   {renderIcon(card.icon)}
                 </div>
 
-                <h3 className="font-serif text-[25px] sm:text-[27px] lg:text-[29px] font-bold text-[#1b1210] leading-tight mb-2 group-hover:text-[#a87529] transition-colors duration-300">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1b1210] leading-tight mb-2 group-hover:text-[#a87529] transition-colors duration-300">
                   {card.title}
                 </h3>
 
-                <p className="text-[16px] sm:text-[17px] lg:text-[19px] text-[#333333] leading-[1.45] font-normal">
+                <p className="text-sm sm:text-base text-[#333333] leading-relaxed font-normal">
                   {card.description}
                 </p>
               </div>

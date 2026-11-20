@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { content } from "@/content";
@@ -149,24 +148,24 @@ export default function About({ data: customData, className = "" }: AboutProps) 
     <section
       id="about-us"
       ref={sectionRef}
-      className={`relative w-full py-16 px-4 sm:px-6 lg:px-8 bg-white text-neutral-900 overflow-hidden ${className}`}
+      className={`relative w-full py-5 sm:py-10 lg:py-16 px-4 sm:px-6 lg:px-8 bg-white text-neutral-900 overflow-hidden ${className}`}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-14 xl:gap-16 items-center">
           <div className="lg:col-span-5 flex flex-col justify-center">
             <div
               className={`flex items-center gap-3 mb-4 transition-all duration-700 ease-out transform ${
                 isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"
               }`}
             >
-              <span className="text-[#c59d5f] font-bold text-sm tracking-widest uppercase">
+              <span className="text-[#c59d5f] font-bold text-xs sm:text-sm tracking-widest uppercase">
                 {eyebrow}
               </span>
               <div className="w-14 h-[2px] bg-[#c59d5f]" />
             </div>
 
             <h2
-              className={`font-serif text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-bold text-[#111827] leading-[1.18] mb-6 transition-all duration-700 delay-150 ease-out transform ${
+              className={`font-serif text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#111827] leading-[1.15] tracking-tight mb-6 transition-all duration-700 delay-150 ease-out transform ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
@@ -176,7 +175,7 @@ export default function About({ data: customData, className = "" }: AboutProps) 
             </h2>
 
             <p
-              className={`text-sm sm:text-base text-neutral-600 leading-relaxed font-normal mb-10 max-w-xl transition-all duration-700 delay-300 ease-out transform ${
+              className={`text-sm sm:text-base text-neutral-600 leading-relaxed font-normal mb-6 sm:mb-10 max-w-xl transition-all duration-700 delay-300 ease-out transform ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -102,7 +101,7 @@ export default function Contact({
       className={`relative w-full overflow-hidden bg-white text-neutral-900 ${className}`}
     >
       <div className="flex flex-col lg:flex-row items-stretch w-full">
-        <div className="relative w-full lg:w-[41%] xl:w-[40.5%] min-h-[300px] sm:min-h-[380px] md:min-h-[430px] lg:min-h-[750px] xl:min-h-[850px] flex items-center justify-center px-4 py-10 sm:p-8 lg:p-8 xl:p-12 shrink-0">
+        <div className="relative w-full lg:w-[41%] xl:w-[40.5%] min-h-[300px] sm:min-h-[380px] md:min-h-[430px] lg:min-h-[750px] xl:min-h-[850px] flex items-center justify-center px-4 py-5 sm:py-8 lg:p-8 xl:p-12 shrink-0">
           <div className="absolute inset-0">
             <Image
               src={image}
@@ -176,7 +175,7 @@ export default function Contact({
         </div>
 
         <div
-          className={`relative z-10 w-full lg:w-[59%] xl:w-[59.5%] bg-white px-5 py-10 sm:px-8 sm:py-12 md:px-12 lg:px-[6%] xl:px-[7%] lg:py-16 xl:py-20 flex items-center transition-all duration-1000 ${
+          className={`relative z-10 w-full lg:w-[59%] xl:w-[59.5%] bg-white px-4 py-5 sm:px-8 sm:py-10 md:px-12 lg:px-[6%] xl:px-[7%] lg:py-16 xl:py-20 flex items-center transition-all duration-1000 ${
             isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-6"
@@ -197,7 +196,7 @@ export default function Contact({
                   <path d="M0 6c6 0 6-5 12-5s6 10 12 10 6-5 8-5" />
                 </svg>
 
-                <span className="text-[#b77b29] text-[10px] sm:text-sm tracking-[0.25em] sm:tracking-[0.35em] font-medium uppercase whitespace-nowrap">
+                <span className="text-[#b77b29] text-xs sm:text-sm tracking-widest font-bold uppercase whitespace-nowrap">
                   {eyebrow}
                 </span>
 
@@ -212,7 +211,7 @@ export default function Contact({
                 </svg>
               </div>
 
-              <h2 className="font-serif text-[34px] min-[375px]:text-[38px] sm:text-[46px] lg:text-[54px] font-normal text-[#111111] leading-[1.15] tracking-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#111111] leading-[1.15] tracking-tight">
                 {heading}
               </h2>
             </div>

@@ -68,10 +68,10 @@ export default function FAQ({ data: customData, className = "" }: FAQProps) {
     <section
       id="faq"
       ref={sectionRef}
-      className={`relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white text-neutral-900 border-t border-neutral-100 overflow-hidden ${className}`}
+      className={`relative w-full py-5 sm:py-12 lg:py-20 xl:py-24 px-4 sm:px-6 lg:px-8 bg-white text-neutral-900 border-t border-neutral-100 overflow-hidden ${className}`}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           <div className="lg:col-span-7 flex flex-col justify-start">
             <div className="mb-6 sm:mb-8">
               <div
@@ -82,14 +82,14 @@ export default function FAQ({ data: customData, className = "" }: FAQProps) {
                 }`}
               >
                 <div className="w-10 sm:w-12 h-[2px] bg-[#c59d5f]" />
-                <span className="text-[#c59d5f] font-extrabold text-xs sm:text-sm tracking-widest uppercase">
+                <span className="text-[#c59d5f] font-bold text-xs sm:text-sm tracking-widest uppercase">
                   {eyebrow}
                 </span>
                 <div className="w-10 sm:w-12 h-[2px] bg-[#c59d5f]" />
               </div>
 
               <h2
-                className={`font-serif text-5xl sm:text-6xl lg:text-[64px] font-extrabold text-[#111827] tracking-tight leading-none mb-2.5 transition-all duration-700 delay-150 ease-out transform ${
+                className={`font-serif text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#111827] tracking-tight leading-[1.15] mb-2.5 transition-all duration-700 delay-150 ease-out transform ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-6"
@@ -170,7 +170,7 @@ export default function FAQ({ data: customData, className = "" }: FAQProps) {
           </div>
 
           <div
-            className={`lg:col-span-5 relative min-h-[380px] sm:min-h-[460px] lg:min-h-[580px] rounded-3xl overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.1)] border border-neutral-100 group transition-all duration-700 delay-300 ease-out transform ${
+            className={`lg:col-span-5 relative w-full h-[400px] sm:h-[480px] lg:h-[580px] lg:sticky lg:top-24 rounded-3xl overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.1)] border border-neutral-100 transition-all duration-700 delay-300 ease-out transform ${
               isVisible
                 ? "opacity-100 translate-x-0 scale-100"
                 : "opacity-0 translate-x-8 scale-[0.98]"
@@ -181,7 +181,7 @@ export default function FAQ({ data: customData, className = "" }: FAQProps) {
               alt={alt}
               fill
               sizes="(max-width: 1024px) 100vw, 42vw"
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              className="object-cover object-center"
               priority
             />
           </div>
